@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<p id="1">+7 (903) 111-11-33 (Beeline)</p>
+<p id="2">звоните с <span>10</span> до <span>21</span></p>
+<span></span>
+
+<script>
+    function changeText() {
+        let one = $('#1');
+        let two = $('#2');
+
+        let text = one.html().replace('(Beeline)', '').replace(/(\d)(\d)(\d)-(\d)(\d)-(\d)(\d)/, '$1$2-$3$4-$5$6$7');
+        one.html(text).css('font-size', '10px')
+
+        two.css('border', '1px solid pink');
+        $('span').each(function(){
+            $(this).css('background-color', '#27913e');
+        });
+
+    }
+
+    changeText();
+</script>
+
+</body>
+</html>
